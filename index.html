@@ -113,6 +113,20 @@ p{
   line-height:1.7;
 }
 
+.case{
+  margin-top:42px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:24px;
+  background:var(--panel2);
+}
+
+.case-line{
+  margin-top:10px;
+  font-size:16px;
+  color:#c7d0dd;
+}
+
 .review{
   margin-top:42px;
   border:1px solid var(--line);
@@ -189,20 +203,21 @@ p{
         It separates meaningful external change from weak, ambiguous, or misleading surface differences.
       </p>
     </div>
+  </section>
 
-    <div class="card">
-      <h2>Signal Proof</h2>
-      <p>
-        A real external transition can be surfaced as material change when it becomes reachable, correlated, and operationally meaningful.
-      </p>
+  <section class="case">
+    <h2>Example Case</h2>
+
+    <div class="case-line">
+      Before: support endpoint not publicly reachable
     </div>
 
-    <div class="card">
-      <h2>Restraint Proof</h2>
-      <p>
-        Non-material change is rejected instead of escalated.
-        The system is designed to avoid noise-driven investigation.
-      </p>
+    <div class="case-line">
+      After: login interface exposed externally
+    </div>
+
+    <div class="case-line">
+      Classification: material external transition
     </div>
   </section>
 
