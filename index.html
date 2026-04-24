@@ -112,6 +112,18 @@ p{
   line-height:1.7;
 }
 
+.review{
+  margin-top:42px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:24px;
+  background:#070d15;
+}
+
+.review strong{
+  color:var(--text);
+}
+
 .footer{
   margin-top:58px;
   color:var(--muted);
@@ -164,25 +176,32 @@ p{
 
   <section class="proof">
     <div class="card">
-      <h2>Controlled Proof</h2>
+      <h2>Controlled Evidence</h2>
       <p>
+        Holdout evaluation: 40 total runs.
         10 material-change cases detected correctly.
         30 non-material cases rejected correctly.
-        No false positives. No false negatives.
       </p>
     </div>
 
     <div class="card">
-      <h2>Operational Meaning</h2>
+      <h2>Decision Quality</h2>
       <p>
-        The engine does not report raw difference.
-        It reports decision-grade change and suppresses low-value noise.
+        0 false positives. 0 false negatives.
+        The engine separates meaningful external change from weak, ambiguous, or misleading differences.
       </p>
     </div>
   </section>
 
+  <section class="review">
+    <h2>Controlled Review</h2>
+    <p>
+      Available for limited technical review, proof-of-capability discussion, or narrowly scoped licensing evaluation.
+      Full proof summary available upon request.
+    </p>
+  </section>
+
   <div class="footer">
-    Technical summary and full proof report available upon request.<br>
     contact: mshurrab20@gmail.com
   </div>
 
