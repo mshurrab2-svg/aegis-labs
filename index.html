@@ -3,101 +3,190 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aegis Labs</title>
+<title>Aegis Labs — Signal Engine</title>
 
 <style>
+:root{
+  --bg:#05070b;
+  --panel:#0b111a;
+  --text:#e8eef7;
+  --muted:#8f9bad;
+  --line:#1b2635;
+  --accent:#7dd3fc;
+}
+
+*{box-sizing:border-box}
+
 body{
   margin:0;
-  background:#05070b;
-  color:#e6edf6;
+  background:var(--bg);
+  color:var(--text);
   font-family:Arial, sans-serif;
 }
 
 .wrap{
-  max-width:700px;
+  max-width:880px;
   margin:0 auto;
-  padding:90px 22px;
+  padding:64px 22px;
 }
 
 .brand{
-  color:#7dd3fc;
-  font-size:14px;
-  letter-spacing:2px;
-  margin-bottom:18px;
+  font-size:13px;
+  letter-spacing:3px;
+  color:var(--accent);
+  margin-bottom:56px;
 }
 
 h1{
-  font-size:48px;
-  margin:0 0 42px;
-  font-weight:600;
-  letter-spacing:-1px;
-  line-height:1.15;
+  font-size:52px;
+  line-height:1.08;
+  margin:0 0 22px;
+  font-weight:650;
+  letter-spacing:-1.5px;
+}
+
+.lead{
+  max-width:620px;
+  color:var(--muted);
+  font-size:21px;
+  line-height:1.65;
+  margin-bottom:58px;
 }
 
 .metrics{
-  font-size:22px;
-  line-height:2.15;
-  color:#aab4c3;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-bottom:42px;
 }
 
-.highlight{
-  color:#7dd3fc;
+.card{
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:18px;
+  padding:24px;
+}
+
+.num{
+  font-size:38px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.label{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.5;
 }
 
 .statement{
-  margin-top:54px;
-  font-size:26px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:34px 0;
+  margin:40px 0;
+  font-size:25px;
   line-height:1.65;
 }
 
-.footer{
-  margin-top:76px;
-  font-size:15px;
-  color:#7b8493;
+.accent{color:var(--accent)}
+
+.proof{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:18px;
 }
 
-@media (max-width:520px){
-  .wrap{
-    padding:76px 22px;
-  }
+h2{
+  margin:0 0 18px;
+  font-size:18px;
+  color:var(--accent);
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
 
-  h1{
-    font-size:46px;
-  }
+p{
+  margin:0;
+  color:#c7d0dd;
+  font-size:17px;
+  line-height:1.7;
+}
 
-  .metrics{
-    font-size:21px;
-  }
+.footer{
+  margin-top:58px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.8;
+}
 
-  .statement{
-    font-size:25px;
-  }
+@media(max-width:700px){
+  .wrap{padding:58px 22px}
+  h1{font-size:46px}
+  .lead{font-size:20px}
+  .metrics,.proof{grid-template-columns:1fr}
+  .statement{font-size:24px}
 }
 </style>
 </head>
 
 <body>
-  <main class="wrap">
+<main class="wrap">
 
-    <div class="brand">AEGIS LABS</div>
+  <div class="brand">AEGIS LABS</div>
 
-    <h1>Aegis Signal Engine</h1>
+  <h1>Aegis Signal Engine</h1>
 
-    <div class="metrics">
-      40 evaluations<br>
-      0 false signals<br>
-      1.0 precision / recall
+  <div class="lead">
+    External change detection for Before/After runs.
+    Built to separate material change from noise, ambiguity, and misleading surface differences.
+  </div>
+
+  <section class="metrics">
+    <div class="card">
+      <div class="num">40</div>
+      <div class="label">controlled evaluations</div>
     </div>
 
-    <div class="statement">
-      <span class="highlight">Material change detected.</span><br>
-      Noise eliminated.
+    <div class="card">
+      <div class="num">0</div>
+      <div class="label">false signals</div>
     </div>
 
-    <div class="footer">
-      contact: mshurrab20@gmail.com
+    <div class="card">
+      <div class="num">1.0</div>
+      <div class="label">precision / recall</div>
+    </div>
+  </section>
+
+  <section class="statement">
+    <span class="accent">Material change detected.</span><br>
+    Noise eliminated.
+  </section>
+
+  <section class="proof">
+    <div class="card">
+      <h2>Controlled Proof</h2>
+      <p>
+        10 material-change cases detected correctly.
+        30 non-material cases rejected correctly.
+        No false positives. No false negatives.
+      </p>
     </div>
 
-  </main>
+    <div class="card">
+      <h2>Operational Meaning</h2>
+      <p>
+        The engine does not report raw difference.
+        It reports decision-grade change and suppresses low-value noise.
+      </p>
+    </div>
+  </section>
+
+  <div class="footer">
+    Technical summary and full proof report available upon request.<br>
+    contact: mshurrab20@gmail.com
+  </div>
+
+</main>
 </body>
 </html>
