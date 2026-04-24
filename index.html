@@ -9,6 +9,7 @@
 :root{
   --bg:#05070b;
   --panel:#0b111a;
+  --panel2:#070d15;
   --text:#e8eef7;
   --muted:#8f9bad;
   --line:#1b2635;
@@ -25,7 +26,7 @@ body{
 }
 
 .wrap{
-  max-width:880px;
+  max-width:900px;
   margin:0 auto;
   padding:64px 22px;
 }
@@ -34,7 +35,7 @@ body{
   font-size:13px;
   letter-spacing:3px;
   color:var(--accent);
-  margin-bottom:56px;
+  margin-bottom:52px;
 }
 
 h1{
@@ -46,11 +47,11 @@ h1{
 }
 
 .lead{
-  max-width:650px;
+  max-width:690px;
   color:var(--muted);
   font-size:21px;
   line-height:1.65;
-  margin-bottom:58px;
+  margin-bottom:54px;
 }
 
 .metrics{
@@ -90,7 +91,7 @@ h1{
 
 .accent{color:var(--accent)}
 
-.proof{
+.grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:14px;
@@ -117,11 +118,7 @@ p{
   border:1px solid var(--line);
   border-radius:18px;
   padding:24px;
-  background:#070d15;
-}
-
-.review strong{
-  color:var(--text);
+  background:var(--panel2);
 }
 
 .footer{
@@ -135,7 +132,7 @@ p{
   .wrap{padding:58px 22px}
   h1{font-size:46px}
   .lead{font-size:20px}
-  .metrics,.proof{grid-template-columns:1fr}
+  .metrics,.grid{grid-template-columns:1fr}
   .statement{font-size:24px}
 }
 </style>
@@ -149,7 +146,7 @@ p{
   <h1>Aegis Signal Engine</h1>
 
   <div class="lead">
-    Detects high-impact external surface changes between runs and converts them into clear, actionable proof artifacts for security and risk teams.
+    Detects when external systems silently change in ways that create real risk — and turns the result into clear proof for security and risk teams.
   </div>
 
   <section class="metrics">
@@ -160,12 +157,12 @@ p{
 
     <div class="card">
       <div class="num">0</div>
-      <div class="label">false signals</div>
+      <div class="label">false positives</div>
     </div>
 
     <div class="card">
-      <div class="num">1.0</div>
-      <div class="label">precision / recall</div>
+      <div class="num">0</div>
+      <div class="label">false negatives</div>
     </div>
   </section>
 
@@ -174,21 +171,37 @@ p{
     Noise eliminated.
   </section>
 
-  <section class="proof">
+  <section class="grid">
     <div class="card">
       <h2>Controlled Evidence</h2>
       <p>
         Holdout evaluation: 40 total runs.
         10 material-change cases detected correctly.
         30 non-material cases rejected correctly.
+        Precision and recall: 1.0.
       </p>
     </div>
 
     <div class="card">
       <h2>Decision Quality</h2>
       <p>
-        0 false positives. 0 false negatives.
-        The engine separates meaningful external change from weak, ambiguous, or misleading differences.
+        The engine does not report raw difference.
+        It separates meaningful external change from weak, ambiguous, or misleading surface differences.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Signal Proof</h2>
+      <p>
+        A real external transition can be surfaced as material change when it becomes reachable, correlated, and operationally meaningful.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Restraint Proof</h2>
+      <p>
+        Non-material change is rejected instead of escalated.
+        The system is designed to avoid noise-driven investigation.
       </p>
     </div>
   </section>
